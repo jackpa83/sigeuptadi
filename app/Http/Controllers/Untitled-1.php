@@ -1,0 +1,10 @@
+$table->id();
+            $table->string('nom_espacio',250);
+            $table->unsignedBigInteger('ubicacion_id')->nullable();
+            $table->string('estatus_id')->nullable();
+            $table->string('estados_id')->nullable();
+            $table->string('desc_espacio',255);
+            $table->foreign('ubicacion_id')->references('id')->on('ubicaciones');
+            $table->foreign('estatus_id')->references('id')->on('estatus');
+            $table->foreign('estados_id')->references('id')->on('estados');
+            $table->timestamps();   
